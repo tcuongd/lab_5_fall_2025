@@ -52,16 +52,16 @@ Training params (mostly defaults from the lab):
 
 Eval rollouts throughout training:
 
-![200k steps](./assets/policy10_step200k.mp4)
+![200k steps](assets/policy10_step200k.mp4)
 
 - Fails to track velocity and acceleration commands. Likely the abduction angle and action rate penalties are dominant here.
 
-![500k steps](./assets/policy10_step500k.mp4)
+![500k steps](assets/policy10_step500k.mp4)
 
 - Tracks velocity and acceleration commands well, but gait is not natural. Knee angles are not consistent between left and right feet, and it looks like Pupper would struggle to stay balanced.
 - It also takes a lot of work to maintain zero velocity; Pupper continually falls to one side and needs to correct.
 
-![1b steps](./assets/policy10_step1b.mp4)
+![1b steps](assets/policy10_step1b.mp4)
 
 - Follows velocity and acceleration, and gait looks quite natural. Seems to easily maintain zero velocity, although has a slight forward tilt bias that it's constantly correcting for.
 - Interestingly, the gait maintains a much lower center of gravity compared to the default RL policy. From real-world deployment, this seems to allow faster movement and turns at the cost of some stability. Pupper is also more vulnerable to tripping on raised surfaces here, as the foot clearance is slightly less compared to default RL policy.
